@@ -1,6 +1,13 @@
 # LLVM1
 
-* main.cpp generates IR for below as out.ll
+## About
+
+* LLVM frontend (IR generation) example based on [this Qiita](https://qiita.com/sakasin/items/097fa676ccfd117acaa2)
+
+
+## How to build
+
+* main.cpp generates IR for something like below as out.ll (see main.cpp)
 
 ```sh
 int main(){
