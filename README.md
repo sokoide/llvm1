@@ -16,6 +16,28 @@ int main(){
 }
 ```
 
+* generate out.ll
+
+```
+$ ninja run
+
+# above generates out.ll as below
+$ cat out.ll
+; ModuleID = 'sokoide_module'
+source_filename = "sokoide_module"
+
+define i64 @main() {
+entrypoint:
+  %0 = call i64 @write(i64 42)
+  ret i64 42
+}
+
+declare i64 @write(i64)
+
+declare i64 @writeln()
+
+```
+
 * builtin.c defines `write` and `writeln` funcitons and compiled into builtin.ll
 
 ```sh
@@ -40,9 +62,11 @@ $ echo $?
 * compile it into a native binary
 
 ```sh
-$ $ llc linked.ll -o linked.s
+$ llc linked.ll -o linked.s
 $ clang linked.s -o linked
 $ ./linked
+42
+$ echo $?
 42
 ```
 
