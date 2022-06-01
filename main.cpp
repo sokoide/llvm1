@@ -41,7 +41,7 @@ int main() {
 
     std::error_code error_info;
     llvm::raw_fd_ostream raw_stream("out.ll", error_info,
-                                    llvm::sys::fs::OpenFlags::F_None);
+                                    llvm::sys::fs::OpenFlags::OF_None);
 
     // IR
     module->print(raw_stream, nullptr);

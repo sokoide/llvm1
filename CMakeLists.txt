@@ -33,6 +33,7 @@ target_precompile_headers(${PROJECT_NAME}.out PRIVATE headers.hpp)
 # include
 target_include_directories(${PROJECT_NAME}.out PUBLIC
 	"/usr/local/opt/llvm/include"
+	"/opt/homebrew/opt/llvm/include"
 	# "/usr/local/Cellar/llvm/10.0.1/include/c++/v1"
 	# "/Library/Developer/CommandLineTools/usr/include/c++/v1"
     "${PROJECT_BINARY_DIR}"
@@ -43,9 +44,11 @@ target_include_directories(${PROJECT_NAME}.out PUBLIC
 
 # link
 target_link_directories(${PROJECT_NAME}.out PUBLIC
-	"/usr/local/Cellar/llvm/10.0.1/lib")
+	"/usr/local/opt/llvm/lib"
+	"/opt/homebrew/opt/llvm/lib"
+	)
 target_link_libraries(${PROJECT_NAME}.out PUBLIC
-	"LLVMX86Disassembler;LLVMX86AsmParser;LLVMX86CodeGen;LLVMCFGuard;LLVMGlobalISel;LLVMSelectionDAG;LLVMAsmPrinter;LLVMDebugInfoDWARF;LLVMCodeGen;LLVMScalarOpts;LLVMInstCombine;LLVMAggressiveInstCombine;LLVMTransformUtils;LLVMBitWriter;LLVMX86Desc;LLVMMCDisassembler;LLVMX86Utils;LLVMX86Info;LLVMMCJIT;LLVMExecutionEngine;LLVMTarget;LLVMAnalysis;LLVMProfileData;LLVMRuntimeDyld;LLVMObject;LLVMTextAPI;LLVMMCParser;LLVMBitReader;LLVMMC;LLVMDebugInfoCodeView;LLVMDebugInfoMSF;LLVMCore;LLVMRemarks;LLVMBitstreamReader;LLVMBinaryFormat;LLVMSupport;LLVMDemangle;z;curses;m;libxml2.tbd"
+	"LLVMX86Disassembler;LLVMX86AsmParser;LLVMX86CodeGen;LLVMCFGuard;LLVMGlobalISel;LLVMSelectionDAG;LLVMAsmPrinter;LLVMDebugInfoDWARF;LLVMCodeGen;LLVMScalarOpts;LLVMInstCombine;LLVMAggressiveInstCombine;LLVMTransformUtils;LLVMBitWriter;LLVMX86Desc;LLVMMCDisassembler;LLVMX86Info;LLVMMCJIT;LLVMExecutionEngine;LLVMTarget;LLVMAnalysis;LLVMProfileData;LLVMRuntimeDyld;LLVMObject;LLVMTextAPI;LLVMMCParser;LLVMBitReader;LLVMMC;LLVMDebugInfoCodeView;LLVMDebugInfoMSF;LLVMCore;LLVMRemarks;LLVMBitstreamReader;LLVMBinaryFormat;LLVMSupport;LLVMDemangle;z;curses;m;libxml2.tbd"
 )
 
 
